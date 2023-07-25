@@ -4,15 +4,15 @@ from matplotlib.ticker import PercentFormatter
 
 #asking for input
 
-bugs = int(input('Enter number of bugs: '))
+defects = int(input('Enter number of bugs: '))
 
 list_counts = []
 list_names = []
 
-for i in range (0, bugs):
-    el_name = input(f'Enter name of {i+1} bug: ')
+for i in range (0, defects):
+    el_name = input(f'Enter name of {i+1} defects: ')
     list_names.append(el_name)
-    el_count = int(input(f'Enter count of {i+1} bug: '))
+    el_count = int(input(f'Enter count of {i+1} defects: '))
     list_counts.append(el_count)
 
 #creating dataframe
@@ -48,5 +48,5 @@ ax2.yaxis.set_major_formatter(PercentFormatter())
 ax.tick_params(axis='y', colors=color1)
 ax2.tick_params(axis='y', colors=color2)
 
-#display Pareto chart
+#printing the chart
 plot.show()
