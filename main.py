@@ -4,16 +4,31 @@ from matplotlib.ticker import PercentFormatter
 
 #asking for input
 
-defects = int(input('Enter number of bugs: '))
+defects = int(input('Enter number of defects: '))
 
 list_counts = []
 list_names = []
 
+class Defect:
+
+    def __init__(self, number):
+        self.number = number
+    
+    def ask_for_name(self):
+        n = input(f'Enter name of {self.number} defects: ')
+        self.name = n
+
+    def ask_for_count(self):
+        c = int(input(f'Enter count of {self.number} defects: '))
+        self.count = c
+
+
 for i in range (0, defects):
-    el_name = input(f'Enter name of {i+1} defects: ')
-    list_names.append(el_name)
-    el_count = int(input(f'Enter count of {i+1} defects: '))
-    list_counts.append(el_count)
+    el = Defect(i+1)
+    el.ask_for_name()
+    list_names.append(el.name)
+    el.ask_for_count()
+    list_counts.append(el.count)
 
 #creating dataframe
 
