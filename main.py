@@ -4,7 +4,9 @@ from matplotlib.ticker import PercentFormatter
 
 #asking for input
 
-defects = int(input('Enter number of defects: '))
+defects_cuantity = int(input('Enter number of defects: '))
+
+defects = []
 
 list_counts = []
 list_names = []
@@ -23,13 +25,18 @@ class Defect:
         self.count = c
 
 
-for i in range (0, defects):
+for i in range (0, defects_cuantity):
     el = Defect(i+1)
     el.ask_for_name()
-    list_names.append(el.name)
+    #list_names.append(el.name)
     el.ask_for_count()
+    #list_counts.append(el.count)
+    defects.append(el)
+    list_names.append(el.name)
     list_counts.append(el.count)
 
+print(list_counts)
+print(list_names)
 #creating dataframe
 
 df = pd.DataFrame({'count': list_counts})
