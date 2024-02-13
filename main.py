@@ -4,7 +4,7 @@ from matplotlib.ticker import PercentFormatter
 
 #asking for input
 
-defects_cuantity = int(input('Enter number of defects: '))
+defects_cuantity = int(input('Enter number of defect groups: '))
 
 #initing the  lists of defects
 
